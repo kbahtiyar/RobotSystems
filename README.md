@@ -1,1 +1,3 @@
-# RobotSystems_v2
+# RobotSystems
+
+Introduction to Robotics II
