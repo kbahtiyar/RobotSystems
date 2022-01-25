@@ -2,7 +2,7 @@
 import math
 #from i2c import I2C
 #import RPi.GPIO as GPIO
-
+import random
 class I2C(object):
     MASTER = 0
     SLAVE = 1
@@ -37,7 +37,7 @@ class I2C(object):
     def _i2c_read_byte(self, addr):  # i2C 读系列函数
         # self._debug("_i2c_read_byte: [0x{:02X}]".format(addr))
         #return self._smbus.read_byte(addr)
-        pass
+        return random.randint(0, 4)
 
     def _i2c_read_i2c_block_data(self, addr, reg, num):
         # self._debug("_i2c_read_i2c_block_data: [0x{:02X}] [0x{:02X}] [{}]".format(addr, reg, num))
@@ -533,7 +533,6 @@ class ADC(I2C):
 
 class fileDB(object):
         """A file based database.
-
     A file based database, read and write arguements in the specific file.
     """
         def __init__(self, db=None):
@@ -592,7 +591,3 @@ class fileDB(object):
                 conf = open(self.db,'w')
                 conf.writelines(lines)
                 conf.close()
-
-
-
-
