@@ -12,7 +12,11 @@ try:
 except ImportError:
     print("No Picamera available ")
     exit()
+
 from picarx_improved import Picarx
+
+_SHOW_IMAGE = False
+
 
 class CameraBasedFollower(Picarx):
     def __init__(self):
