@@ -15,7 +15,7 @@ except ImportError:
     print("This computer does not appear to be a PiCar-X system (/opt/ezblock is not present). Shadowing hardware calls with substitute functions")
     from sim_ezblock import *
 
-class Sensor():
+class Sensor(Picarx):
     def __init__(self):
         super().__init__()
         self.C0 = ADC("A0")
@@ -48,7 +48,7 @@ class Sensor():
             sensor_bus.write(data)
             time.sleep(delay)
 
-class Interpreter(object):
+class Interpreter():
     def __init__(self, sensitivity = 1.5, polarity= -1):
         super().__init__()
         self.sensitivity = sensitivity
@@ -134,8 +134,8 @@ if __name__ == "__main__":
 
     time.sleep(3)
     sensor = Sensor()
-    processor = Interpreter()
-    controller = Controller()
+    processor = Interpreter(sensitivity = 1.5, polarity= -1)
+    controller = Controller(scalingFactor=15)
     data = None
     direction = None
     degree = None

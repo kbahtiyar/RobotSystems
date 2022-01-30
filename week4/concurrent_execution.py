@@ -8,8 +8,8 @@ import atexit
 
 if __name__ == "__main__":
     sensor = Sensor()
-    interpreter = Interpreter()
-    controller = Controller()
+    interpreter = Interpreter(sensitivity = 1.5, polarity= -1)
+    controller = Controller(scalingFactor=15)
     sensor_bus = Bus()
     interpreter_bus = Bus()
     with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
