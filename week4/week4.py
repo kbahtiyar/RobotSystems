@@ -1,5 +1,5 @@
 import sys
-sys.path.append(r'D:\OSU\ROB599\Last\lib')
+sys.path.append(r'/home/kaanb/RobotSystems/lib')
 import time
 import numpy
 from picarx_improved import Picarx

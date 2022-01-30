@@ -1,6 +1,6 @@
 from Bus import Bus
 import sys
-sys.path.append(r'D:\OSU\ROB599\Last\lib')
+sys.path.append(r'/home/kaanb/RobotSystems/lib')
 from week4 import Sensor, Interpreter, Controller
 import time
 import concurrent.futures
