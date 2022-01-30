@@ -7,9 +7,9 @@ class Bus:
 
     def read(self):
         with self.lock.gen_rlock():
-            msg = self.message
-        return msg
+            message = self.message
+        return message
 
-    def write(self, msg):
+    def write(self, message):
         with self.lock.gen_wlock():
-            self.message = msg
+            self.message = message
