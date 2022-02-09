@@ -195,8 +195,8 @@ class Picarx(object):
 
     def Get_distance(self):
         timeout = 0.01
-        trig = Pin('D8')
-        echo = Pin('D9')
+        trig = Pin('D2')
+        echo = Pin('D3')
 
         trig.low()
         time.sleep(0.01)
@@ -225,20 +225,3 @@ if __name__ == "__main__":
     px = Picarx()
     px.forward(50)
     time.sleep(1)
-    # px.stop()
-    # set_dir_servo_angle(0)
-    # time.sleep(1)
-    # self.set_motor_speed(1, 1)
-    # self.set_motor_speed(2, 1)
-    # camera_servo_pin.angle(0)
-# set_camera_servo1_angle(cam_cal_value_1)
-# set_camera_servo2_angle(cam_cal_value_2)
-# set_dir_servo_angle(dir_cal_value)
-
-# if __name__ == "__main__":
-#     try:
-#         # dir_servo_angle_calibration(-10) 
-#         while 1:
-#             test()
-#     finally: 
-#         stop()
