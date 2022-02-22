@@ -147,8 +147,8 @@ class Perception():
             if frame is not None:
                 frame_read = perception.read_image(frame)
                 frame_lab = perception.convert2LAB()
-                frame_final, coordinates, color, rgb = perception.detect_object(frame_lab, frame)
-                cv2.imshow("Final Frame", frame_final)
+                frame_final, world_x_cor, world_y_cor = perception.detect_object(frame_lab, frame)
+                cv2.imshow("Frame", frame_final)
                 key = cv2.waitKey(1)
                 if key == 27:
                     break
